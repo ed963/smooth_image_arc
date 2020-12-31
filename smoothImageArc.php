@@ -7,15 +7,15 @@
  * Adapted from Ulrich Mierendorff's imageSmoothArc function
  * http://www.ulrichmierendorff.com/software/antialiased_arcs.html
  * 
- * @param resource $img A PHP GD image resource, returned by one of the image creation functions, 
+ * @param img A PHP GD image resource, returned by one of the image creation functions, 
  * with line thickness set to 1 pixel
- * @param int $cx The x-coordinate of the centre of the arc
- * @param int $cy The y-coordinate of the centre of the arc
- * @param int $thickness The line thickness of the arc, in pixels
- * @param int $radius The radius of the arc, in pixels
- * @param int $start The arc's start angle, in degrees
- * @param int $stop The arc's end angle, in degrees
- * @param array $color The color of the arc as a four-element array corresponding to RGBA values
+ * @param cx The x-coordinate of the centre of the arc
+ * @param cy The y-coordinate of the centre of the arc
+ * @param thickness The line thickness of the arc, in pixels
+ * @param radius The radius of the arc, in pixels
+ * @param start The arc's start angle, in degrees
+ * @param stop The arc's end angle, in degrees
+ * @param color The color of the arc as a four-element array corresponding to RGBA values
  * 
  * @return void
  * 
@@ -23,7 +23,7 @@
  *     - $start and $stop must be multiples of 90
  *     - 0 degrees is located at the three-o-clock position, and the arc is drawn clockwise
  */
-function smoothImageArc($img, $cx, $cy, $thickness, $radius, $start, $stop, $color) {
+function smoothImageArc(resource $img, int $cx, int $cy, int $thickness, int $radius, int $start, int $stop, array $color) {
     
     while ($start < 0) {
         $start += 360;
