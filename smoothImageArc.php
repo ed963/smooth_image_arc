@@ -1,29 +1,30 @@
 <?php
 
+/**
+ * An anti-aliased alternative to the imagearc function in the GD library, with start and stop angles 
+ * limited to multiples of 90.
+ * 
+ * Adapted from Ulrich Mierendorff's imageSmoothArc function
+ * http://www.ulrichmierendorff.com/software/antialiased_arcs.html
+ * 
+ * @param resource $img A PHP GD image resource, returned by one of the image creation functions, 
+ * with line thickness set to 1 pixel
+ * @param int $cx The x-coordinate of the centre of the arc
+ * @param int $cy The y-coordinate of the centre of the arc
+ * @param int $thickness The line thickness of the arc, in pixels
+ * @param int $radius The radius of the arc, in pixels
+ * @param int $start The arc's start angle, in degrees
+ * @param int $stop The arc's end angle, in degrees
+ * @param array $color The color of the arc as a four-element array corresponding to RGBA values
+ * 
+ * @return void
+ * 
+ * Notes:
+ *     - $start and $stop must be multiples of 90
+ *     - 0 degrees is located at the three-o-clock position, and the arc is drawn clockwise
+ */
 function smoothImageArc($img, $cx, $cy, $thickness, $radius, $start, $stop, $color) {
-    /*
-    Adapted from Ulrich Mierendorff's imageSmoothArc function
-    http://www.ulrichmierendorff.com/software/antialiased_arcs.html
-
-    Parameters:
-         $img        - A PHP GD image resource, returned by one of the image creation functions, with 
-                       line thickness set to 1 pixel (i.e. imagesetthickness($img, 1) has been called)
-         $cx         - The x-coordinate of the centre of the arc
-         $cy         - The y-coordinate of the centre of the arc
-         $thickness  - The line thickness of the arc, in pixels
-         $radius     - The radius of the arc, in pixels
-         $start      - The arc's start angle, in degrees
-         $stop       - The arc's end angle, in degrees
-         $color      - The color of the arc as a four-element array corresponding to RGBA values
-
-    Notes: 
-       - $start and $stop must be multiples of 90
-       - 0 degrees is located at the three-o-clock position, and the arc is drawn clockwise
-       */
-    /**
-     * 
-     */
-
+    
     while ($start < 0) {
         $start += 360;
     }
@@ -53,10 +54,10 @@ function smoothImageArc($img, $cx, $cy, $thickness, $radius, $start, $stop, $col
     }    
 }
 
+/**
+ * This function is a helper for smoothImageArc, and should not be called directly.
+ */
 function smoothArcSegment($img, $cx, $cy, $thickness, $radius, $color, $corner) {
-    /**
-     * This function is a helper for smoothImageArc, and should not be called directly.
-     */
 
     $fillColor = imageColorExactAlpha($img, $color[0], $color[1], $color[2], $color[3]);
     $depth = round($radius + 0.5 * $thickness);
