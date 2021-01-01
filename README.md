@@ -2,7 +2,7 @@
 
 This is an anti-aliased alternative to the imagearc function from the GD library in PHP.
 
-### Background
+## Background
 
 PHP's GD library includes functions such as `imagearc` and `imagefilledarc` that can be used to draw arcs and ellipses. However, the images produced by these functions suffer from aliasing (jagged, pixelated edges).
 
@@ -14,7 +14,7 @@ The `smoothImageArc` function that I have written, which is based on Ulrich Mier
 
 The arc on the left has been drawn with the GD `imagearc` function, and the arc on the right has been drawn with `imagefilledarc`.
 
-### Quick Example
+## Quick Example
 
 ```php
 <?php
@@ -55,6 +55,6 @@ This example renders the following image:
 
 See the `examples` directory for more usage examples.
 
-### License
+## License
 
 Distributed under the MIT License. More information can be found in `LICENSE`.
