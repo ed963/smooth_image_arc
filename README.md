@@ -1,14 +1,14 @@
 # smooth_image_arc
 
-An anti-aliased alternative to the imagearc function from the GD library in PHP.
+This is an anti-aliased alternative to the imagearc function from the GD library in PHP.
 
 ### Background
 
-PHP's GD library includes functions such as `imagearc` and `imagefilledarc` that can be used to draw arcs and ellipses. However, the images produced by these functions suffer from aliasing.
+PHP's GD library includes functions such as `imagearc` and `imagefilledarc` that can be used to draw arcs and ellipses. However, the images produced by these functions suffer from aliasing (jagged, pixelated edges).
 
-http://www.ulrichmierendorff.com/software/antialiased_arcs.html presents an anti-aliased alternative to the `imagefilledarc` function, which allows you to draw smooth, filled arcs. 
+On his [site](http://www.ulrichmierendorff.com/software/antialiased_arcs.html), Ulrich Mierendorff presents an anti-aliased alternative to the `imagefilledarc` function, which allows you to draw smooth, filled arcs. It does not however allow you to draw _un-filled_ arcs, which you would need if you wanted to draw something like a rounded rectangular border or an (un-filled) circle. 
 
-The smoothImageArc function follows a similar approach to provide an anti-aliased alternative to the `imagearc` function.
+The `smoothImageArc` function that I have written follows a similar approach to provide an anti-aliased alternative to the `imagearc` function.
 
 ![](examples/comparison.png)
 
