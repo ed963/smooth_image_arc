@@ -23,7 +23,7 @@ The arc on the left has been drawn with the GD `imagearc` function, and the arc 
 An example script to demonstrate the usage of the smoothImageArc functions to draw circles.
 */
 
-include('./smoothImageArc.php');
+include('path/to/smoothImageArc.php');
 
 // create a 1000-by-1000 pixel image
 $img = imagecreatetruecolor(1000, 1000);
