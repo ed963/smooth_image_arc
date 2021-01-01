@@ -53,7 +53,7 @@ This example renders the following image:
 
 ![](examples/quick_example.png)
 
-More examples can be found in the `examples` directory.
+See the `examples` directory for more usage examples.
 
 ### License
 
