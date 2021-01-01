@@ -1,6 +1,6 @@
 # smooth_image_arc
 
-This is an anti-aliased alternative to the imagearc function from the GD library in PHP.
+This is an anti-aliased alternative to the imagearc function from the GD library in PHP, with start and stop angles limited to multiples of 90 degrees.
 
 ## Background
 
@@ -13,6 +13,10 @@ The `smoothImageArc` function that I have written, which is based on Ulrich Mier
 ![](examples/comparison.png)
 
 The arc on the left has been drawn with the GD `imagearc` function, and the arc on the right has been drawn with `imagefilledarc`.
+
+## Requirements
+
+This function requires the GD library, which comes bundled with most PHP installations. See the [PHP documentation](https://www.php.net/manual/en/image.setup.php) for detailed instructions on how to configure PHP to enable the GD extension.
 
 ## Quick Example
 
@@ -53,8 +57,12 @@ This example renders the following image:
 
 ![](examples/quick_example.png)
 
-See the `examples` directory for more usage examples.
+For more usage examples please refer to the `examples` directory.
 
 ## License
 
 Distributed under the MIT License. More information can be found in `LICENSE`.
+
+## Acknowledgements
+
+This function was largely based on the work of Ulrich Mierendorff. His work on rendering anti-aliased arcs can be found at http://www.ulrichmierendorff.com/software/antialiased_arcs.html.
