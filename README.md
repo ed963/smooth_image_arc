@@ -12,7 +12,7 @@ The `smoothImageArc` function that I have written, which is based on Ulrich Mier
 
 ![](examples/comparison.png)
 
-The arc on the left has been drawn with the GD `imagearc` function, and the arc on the right has been drawn with `imagefilledarc`.
+The arc on the left has been drawn with the GD `imagearc` function, and the arc on the right has been drawn with `smoothImageArc`.
 
 ## Requirements
 
